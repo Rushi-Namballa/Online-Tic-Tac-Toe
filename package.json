@@ -13,8 +13,10 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@types/ws": "^8.5.14",
+    "chalk": "^5.4.1",
     "nanoid": "^5.1.0",
     "next": "15.1.7",
+    "ora": "^8.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "ws": "^8.18.1"
