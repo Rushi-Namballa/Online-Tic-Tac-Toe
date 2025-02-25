@@ -1,44 +1,42 @@
-import { faBookOpen, faGear } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
-import IconButton from "./IconButton";
+import Navbar from "./Navbar"
+import IconButton from "./components/IconButton"
+import { faBook, faGear } from "@fortawesome/free-solid-svg-icons"
 
 export default function Home() {
   return (
-    <div className="bg-orange-200 h-screen w-screen text-neutral-100 flex flex-col items-center">
-      <header className="shadow h-12 w-full flex items-center justify-between px-12 bg-orange-400">
-        <h1>Online Tic Tac Toe</h1>
+    <main className="flex flex-col w-screen h-screen items-center">
+      <Navbar>
+        <IconButton icon={faBook} href="/instructions">
+          Instructions
+        </IconButton>
+        <IconButton icon={faGear} href="/settings">
+          Settings
+        </IconButton>
+      </Navbar>
 
-        <div className="flex gap-4">
-          <IconButton icon={faBookOpen}>
-            Instructions
-          </IconButton>
-
-          <IconButton icon={faGear}>
-            Settings
-          </IconButton>
+      <div className="flex justify-between max-w-[64rem] w-full flex-grow items-center">
+        <div className="flex flex-col gap-4 items-center">
+          <h1 className="text-5xl font-semibold">Online Tic Tac Toe</h1>
+          <a
+            href="/game"
+            className="bg-orange-400 w-fit hover:bg-orange-500 transition-colors font-semibold rounded-full py-2 px-4 uppercase"
+          >
+            Start Game - Online
+          </a>
         </div>
-      </header>
 
-      <main className="flex-grow flex items-center justify-center gap-64">
-        <div className="flex flex-col items-center gap-4">
-          <span className="text-3xl font-bold text-neutral-700">Online Tic Tac Toe</span>
-          <button className="bg-amber-500 rounded-full px-4 py-2">Start Game - Online</button>
+        <div className="grid grid-rows-3 grid-cols-3 w-96 h-96 border-2 border-neutral-600">
+          <div className="row-span-1 col-span-1 bg-orange-400" />
+          <div className="row-span-1 col-span-1 bg-orange-200" />
+          <div className="row-span-1 col-span-1 bg-orange-400" />
+          <div className="row-span-1 col-span-1 bg-orange-200" />
+          <div className="row-span-1 col-span-1 bg-orange-400" />
+          <div className="row-span-1 col-span-1 bg-orange-200" />
+          <div className="row-span-1 col-span-1 bg-orange-400" />
+          <div className="row-span-1 col-span-1 bg-orange-200" />
+          <div className="row-span-1 col-span-1 bg-orange-400" />
         </div>
-
-        <div className="grid w-96 h-96 border-2 border-neutral-500 grid-cols-3 grid-rows-3">
-          <div className="bg-orange-300" />
-          <div className="bg-orange-400" />
-          <div className="bg-orange-300" />
-          <div className="bg-orange-400" />
-          <div className="bg-orange-300" />
-          <div className="bg-orange-400" />
-          <div className="bg-orange-300" />
-          <div className="bg-orange-400" />
-          <div className="bg-orange-300" />
-        </div>
-      </main>
-    </div>
-  );
+      </div>
+    </main>
+  )
 }
-
