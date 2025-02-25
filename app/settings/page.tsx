@@ -9,8 +9,8 @@ import merge from "../utilities/tailwind"
 
 export default function SettingsPage() {
   const settings = getGameData()
-  const [markerState, setMarker] = useState(settings.marker)
-  const [nameState, setName] = useState(settings.name)
+  const [markerState, setMarker] = useState(settings?.marker)
+  const [nameState, setName] = useState(settings?.name)
 
   useEffect(() => {
     window.localStorage.setItem(
